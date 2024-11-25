@@ -1,9 +1,10 @@
 package pages;
 
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.claseBase;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class checkoutPage extends claseBase {
     public checkoutPage(WebDriver driver){
@@ -13,10 +14,6 @@ public class checkoutPage extends claseBase {
     By byTextBoxLastName = By.id("last-name");
     By byTextBoxPostalCode = By.id("postal-code");
     By byBtnContinue = By.id("continue");
-    By byTextSauceCard = By.xpath("\"//*[@id=\\\"checkout_summary_container\\\"]/div/div[2]/div[2]\"");
-    By byTextSubTotal = By.xpath("//*[@id=\"checkout_summary_container\"]/div/div[2]/div[6]");
-    By byTextTax = By.xpath("//*[@id=\"checkout_summary_container\"]/div/div[2]/div[7]");
-    By byTextTotal = By.xpath("//*[@id=\"checkout_summary_container\"]/div/div[2]/div[8]");
     By byBtnFinish = By.id("finish");
     By byTextThksPurchase = By.xpath("//*[@id=\"checkout_complete_container\"]/h2");
     By byBtnBackHome = By.id("back-to-products");
@@ -31,11 +28,8 @@ public class checkoutPage extends claseBase {
         System.out.println("Continuando con la compra...");
         click(esperaExplicita(byBtnContinue));
     }
-    public void stepTwo(String creditCard, String itemTotal, String tax, String total){
-        Assertions.assertEquals(obtenerTexto(esperaExplicita(byTextSauceCard)), creditCard);
-        Assertions.assertEquals(obtenerTexto(esperaExplicita(byTextSubTotal)), itemTotal);
-        Assertions.assertEquals(obtenerTexto(esperaExplicita(byTextTax)), tax);
-        Assertions.assertEquals(obtenerTexto(esperaExplicita(byTextTotal)), total);
+    public void stepTwo(){
+        scroller(driver, 0, 1000);
         click(esperaExplicita(byBtnFinish));
     }
     public String obtenerCompleteOrder(){

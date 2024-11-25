@@ -1,9 +1,6 @@
 package utils;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -16,7 +13,7 @@ import java.util.List;
 
 public class claseBase {
     protected WebDriver driver;
-    private WebDriverWait wait;
+    private static WebDriverWait wait;
     public WebDriver getDriver() {
         return driver;
     }
@@ -111,7 +108,7 @@ public class claseBase {
     public String obtenerTexto(By localizador){
         return this.driver.findElement(localizador).getText();
     }
-    public String obtenerTexto(WebElement elemento){
+    public static String obtenerTexto(WebElement elemento){
         return elemento.getText();
     }
     public String obtenerAtributoWebElement(By localizador,String atributo){
@@ -119,5 +116,21 @@ public class claseBase {
     }
     public String obtenerAtributoWebElement(WebElement elemento,String atributo){
         return elemento.getAttribute(atributo);
+    }
+    public void scroller(WebDriver driver, int horizontal, int vertical){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        /*
+        Horizontal
+            Un valor positivo desplaza el contenido hacia la derecha.
+            Un valor negativo desplaza el contenido hacia la izquierda.
+
+        Vertical
+            Un valor positivo desplaza el contenido hacia abajo.
+            Un valor negativo desplaza el contenido hacia arriba.
+         */
+        js.executeScript("window.scrollBy(" + horizontal + ", " + vertical + ");");
+    }
+    public void ejecutandoCaso (String nroCaso){
+        System.out.println("Ejecutando caso Nro. " + nroCaso);
     }
 }

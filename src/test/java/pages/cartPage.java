@@ -17,7 +17,7 @@ public class cartPage extends claseBase {
     By byBtnRemoveJacket = By.id("remove-sauce-labs-fleece-jacket");
     By byBtnRemoveOnesie = By.id("remove-sauce-labs-onesie");
     By byBtnRemoveShirt = By.id("remove-test.allthethings()-t-shirt-(red)");
-    By byBtnCheckout = By.xpath("//*[@id=\"checkoutPage\"]");
+    By byBtnCheckout = By.name("checkout");
     public void removerArticulo(String articulo){
         Map<String, By> articuloLocalizador = new HashMap<>();
         articuloLocalizador.put("Mochila", byBtnRemoveBackPack);
@@ -35,6 +35,7 @@ public class cartPage extends claseBase {
         }
     }
     public void irCheckout(){
+        scroller(driver, 0, 1000);
         click(esperaExplicita(byBtnCheckout));
     }
 }

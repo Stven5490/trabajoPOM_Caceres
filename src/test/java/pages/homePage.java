@@ -18,7 +18,8 @@ public class homePage extends claseBase {
     By byBtnOnesie = By.xpath("//*[@id=\"add-to-cart-sauce-labs-onesie\"]");
     By byBtnShirt = By.xpath("//*[@id=\"add-to-cart-test.allthethings()-t-shirt-(red)\"]");
     By byBtnCarrito = By.className("shopping_cart_link");
-    By bybtnLogout = By.xpath("//*[@id=\"logout_sidebar_link\"]");
+    By byBtnMenu = By.xpath("//*[@id=\"react-burger-menu-btn\"]");
+    By byBtnLogout = By.xpath("//*[@id=\"logout_sidebar_link\"]");
 
     public void agregarElemento(String articulo){
         Map<String, By> articuloLocalizador = new HashMap<>();
@@ -39,8 +40,5 @@ public class homePage extends claseBase {
     public void irCarrito(){
         System.out.println("Ingresando al carrito");
         click(esperaExplicita(byBtnCarrito));
-    }
-    public void logout(){
-        click(esperaExplicita(bybtnLogout));
     }
 }
