@@ -19,6 +19,7 @@ public class homePage extends claseBase {
     By byBtnShirt = By.xpath("//*[@id=\"add-to-cart-test.allthethings()-t-shirt-(red)\"]");
     By byBtnCarrito = By.className("shopping_cart_link");
     By bybtnLogout = By.xpath("//*[@id=\"logout_sidebar_link\"]");
+
     public void agregarElemento(String articulo){
         Map<String, By> articuloLocalizador = new HashMap<>();
         articuloLocalizador.put("Mochila", byBtnBagPack);

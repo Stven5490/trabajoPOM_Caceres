@@ -35,8 +35,9 @@ public class tests {
         home = new homePage(driver);
         cart = new cartPage(driver);
         checkout = new checkoutPage(driver);
+        home.cargarSitio(obtenerProperties("url"));
     }
-    @AfterEach
+    //@AfterEach
     public void posCondiciones(){
         login.cerrarBrowser();
     }
