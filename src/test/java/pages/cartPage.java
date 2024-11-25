@@ -35,6 +35,7 @@ public class cartPage extends claseBase {
         }
     }
     public void irCheckout(){
+        System.out.println("Dirigiendo al Checkout");
         scroller(driver, 0, 1000);
         click(esperaExplicita(byBtnCheckout));
     }

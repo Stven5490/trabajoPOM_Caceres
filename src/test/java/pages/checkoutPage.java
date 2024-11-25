@@ -29,6 +29,7 @@ public class checkoutPage extends claseBase {
         click(esperaExplicita(byBtnContinue));
     }
     public void stepTwo(){
+        System.out.println("Finalizando compra...");
         scroller(driver, 0, 1000);
         click(esperaExplicita(byBtnFinish));
     }

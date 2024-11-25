@@ -31,7 +31,7 @@ public class homePage extends claseBase {
         articuloLocalizador.put("Polera Roja", byBtnShirt);
         By localizador = articuloLocalizador.get(articulo);
         if (localizador != null){
-            System.out.println("Agregando al carrito, " + articulo);
+            System.out.println("Agregando al carrito: " + articulo);
             click(esperaExplicita(localizador));
         } else {
             System.err.println("Elemento seleccionado no existe: " + articulo);
