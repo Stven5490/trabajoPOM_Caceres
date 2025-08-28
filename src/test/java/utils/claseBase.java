@@ -38,8 +38,15 @@ public class claseBase {
     public void cargarSitio(String url){
         this.driver.get(url);
     }
+    /*
     public WebElement esperaExplicita(By localizador){
         wait = new WebDriverWait(this.driver, 30);
+        return wait.until(ExpectedConditions.presenceOfElementLocated(localizador));
+    }
+    */
+    public WebElement esperaExplicita(By localizador) {
+        Duration time = Duration.ofSeconds(30);
+        wait = new WebDriverWait(this.driver, time);
         return wait.until(ExpectedConditions.presenceOfElementLocated(localizador));
     }
     public void esperarXSegundos(int miliSegundos) {

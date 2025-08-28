@@ -2,22 +2,31 @@ plugins {
     id 'java'
 }
 
-group = 'org.example'
+group = 'org.Stven5490'
 version = '1.0.0'
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testImplementation "org.seleniumhq.selenium:selenium-java:3.141.59"
-    testImplementation 'org.apache.poi:poi-ooxml:4.1.2'
-    testImplementation 'org.apache.poi:poi:4.1.2'
-    testImplementation("io.github.bonigarcia:webdrivermanager:5.9.2")
+ext {
+    seleniumVersion = '4.25.0'
+    cucumberVersion = '7.18.1'
+    junit4Version = '4.13.2'
+    poiVersion = '5.2.5'
+    wdmVersion = '5.8.0'
 }
 
+dependencies {
+    testImplementation "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
+    testImplementation "io.github.bonigarcia:webdrivermanager:$wdmVersion"
+    testImplementation "io.cucumber:cucumber-java:$cucumberVersion"
+    testImplementation "io.cucumber:cucumber-junit:$cucumberVersion"
+    testImplementation "junit:junit:$junit4Version"
+    implementation "org.apache.poi:poi:$poiVersion"
+}
+
+
 test {
-    useJUnitPlatform()
+    useJUnit()
 }

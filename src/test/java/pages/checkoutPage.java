@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.claseBase;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class checkoutPage extends claseBase {
     public checkoutPage(WebDriver driver){
