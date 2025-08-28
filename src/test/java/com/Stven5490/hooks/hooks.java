@@ -11,18 +11,22 @@ public class hooks {
 
     public static WebDriver driver;
     private int stepIndex;
+    private int counter = 0;
 
     @Before
-    public void setUp(Scenario scenario) {
+    public void inicializarPrueba(Scenario scenario) {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        maximizarVentana();
         // Reinicia contador de pasos por escenario
-        stepIndex = 0;
+        stepIndex = counter;
+    }
+    private void maximizarVentana() {
+        driver.manage().window().maximize();
     }
 
     @AfterStep
-    public void takeScreenshotAfterEachStep(Scenario scenario) {
+    public void evidenciaCadaPaso(Scenario scenario) {
         try {
             if (driver instanceof TakesScreenshot) {
                 byte[] ss = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
@@ -37,7 +41,7 @@ public class hooks {
     }
 
     @After
-    public void tearDown() {
+    public void cerrarBrowser() {
         if (driver != null) {
             driver.quit();
         }
