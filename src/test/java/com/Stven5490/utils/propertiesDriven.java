@@ -1,4 +1,4 @@
-package utils;
+package com.Stven5490.utils;
 
 import java.io.FileInputStream;
 import java.io.InputStream;

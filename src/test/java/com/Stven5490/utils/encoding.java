@@ -1,4 +1,4 @@
-package utils;
+package com.Stven5490.utils;
 
 import java.nio.charset.StandardCharsets;
 

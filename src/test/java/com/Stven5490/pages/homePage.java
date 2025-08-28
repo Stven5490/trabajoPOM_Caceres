@@ -1,8 +1,8 @@
-package pages;
+package com.Stven5490.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utils.claseBase;
+import com.Stven5490.utils.claseBase;
 
 import java.util.HashMap;
 import java.util.Map;
